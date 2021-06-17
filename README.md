@@ -1,46 +1,11 @@
-# Getting Started with Create React App
+# Transport for NSW
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Create a calendar using your favourite JavaScript web framework. The calendar should display information for incidents and alerts on the NSW public transport network.
 
-## Available Scripts
+You can find incident and alert data on this API: https://opendata.transport.nsw.gov.au/node/601/exploreapi#!/default/tfnsw_addinfo_request. Note, you will need to sign up for an account to access this API. Once you sign up, you can create an Application under “My Account” and assign the Trip Planning APIs to your new Application.
 
-In the project directory, you can run:
+Please feel free to implement any filters, search functionality or UI design, etc that you think will help the customer navigate this data. One basic example of how this might look is included below. Transport for NSW caters for a wide range of users across the state, so your solution should work on different sized screens and should be screen reader and keyboard accessible.
 
-### `yarn start`
+The application should be written to be production ready. Please use the opportunity to demonstrate how you create high quality web applications. Use all the techniques and patterns you would normally use for a production application. To submit your solution, please commit your code to a public git repository (such as GitHub, GitLab or Bitbucket) and provide us access details. You should include documentation of your solution including instructions for how to run your application.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+If you have any questions, please reach out to Aaron.Thomson@transport.nsw.gov.au.
