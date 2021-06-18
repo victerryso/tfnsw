@@ -9,7 +9,7 @@ interface Props {
 const Calendar = ({ date, handleChange }: Props) => (
   <DatePicker
     autoOk
-    orientation="landscape"
+    orientation="portrait"
     variant="static"
     openTo="date"
     value={date}
