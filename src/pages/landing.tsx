@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Grid, Paper } from "@material-ui/core";
+import { MaterialUiPickersDate } from "@material-ui/pickers/typings/date";
 import formatDate from "../lib/format-date";
 import requestData from "../lib/request-data";
 import Header from "../components/header";
@@ -23,6 +24,13 @@ const LandingPage = () => {
     return regexp.test(JSON.stringify(alert));
   });
 
+  const handleCalendarChange = (date: MaterialUiPickersDate) => {
+    if (date) {
+      setDate(date);
+      setData(null);
+    }
+  };
+
   return (
     <div>
       <Header
@@ -39,10 +47,7 @@ const LandingPage = () => {
         >
           <Grid item xs={12} sm={4}>
             <Paper>
-              <Calendar
-                date={date}
-                handleChange={(date) => date && setDate(date)}
-              />
+              <Calendar date={date} handleChange={handleCalendarChange} />
             </Paper>
           </Grid>
           <Grid item xs={12} sm={8}>
