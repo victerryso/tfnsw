@@ -7,12 +7,15 @@ import Header from "../components/header";
 import Calendar from "../components/calendar";
 import Alerts from "../components/alerts";
 import Modes from "../components/modes";
+import Priorities from "../components/priorities";
+import Search from "../components/search";
 
 const LandingPage = () => {
   const [date, setDate] = useState(new Date());
   const [data, setData] = useState<any>();
-  const [mode, setMode] = useState<number>(1);
+  const [mode, setMode] = useState(1);
   const [query, setQuery] = useState("");
+  const [priority, setPriority] = useState<string | null>(null);
 
   useEffect(() => {
     requestData({
@@ -24,7 +27,10 @@ const LandingPage = () => {
   const regexp = new RegExp(query, "i");
 
   const alerts = (data?.infos?.current ?? []).filter((alert: any) => {
-    return regexp.test(JSON.stringify(alert));
+    return (
+      regexp.test(JSON.stringify(alert)) &&
+      (!priority || alert.priority === priority)
+    );
   });
 
   const handleCalendarChange = (date: MaterialUiPickersDate) => {
@@ -36,10 +42,7 @@ const LandingPage = () => {
 
   return (
     <div>
-      <Header
-        value={query}
-        handleChange={(event) => setQuery(event.target.value)}
-      />
+      <Header />
       <Container>
         <Grid
           container
@@ -48,18 +51,21 @@ const LandingPage = () => {
           justify="center"
           alignItems="stretch"
         >
-          <Grid item xs={12} sm={4}>
+          <Grid item sm={12} md={4}>
             <Paper>
               <Calendar date={date} handleChange={handleCalendarChange} />
             </Paper>
           </Grid>
-          <Grid item xs={12} sm={8}>
-            {data && (
-              <Paper>
-                <Modes mode={mode} handleClick={setMode} />
-                <Alerts alerts={alerts} />
-              </Paper>
-            )}
+          <Grid item sm={12} md={8}>
+            <Paper>
+              <Search query={query} handleChange={setQuery} />
+              <Modes currentMode={mode} handleClick={setMode} />
+              <Priorities
+                currentPriority={priority}
+                handleClick={setPriority}
+              />
+              <Alerts alerts={alerts} />
+            </Paper>
           </Grid>
         </Grid>
       </Container>

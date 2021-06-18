@@ -1,4 +1,7 @@
 import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import Divider from "@material-ui/core/Divider";
 import Alert from "./alert";
 
 interface Props {
@@ -9,12 +12,20 @@ const Alerts = ({ alerts = [] }: Props) => {
   return (
     <List>
       {alerts.map((alert: any) => (
-        <Alert
-          title={alert.urlText}
-          description={alert.content}
-          // items={[...alert.affected.lines, ...alert.affected.stops].map(({ description }) => description)}
-        />
+        <Alert title={alert.urlText} description={alert.content} />
       ))}
+
+      {alerts.length === 0 && (
+        <>
+          <Divider />
+          <ListItem>
+            <ListItemText
+              primary="No alerts found"
+              secondary="Try switching the date, mode or priority"
+            />
+          </ListItem>
+        </>
+      )}
     </List>
   );
 };

@@ -5,17 +5,16 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
 interface Props {
-  currentMode: number;
-  handleClick: (mode: number) => void;
+  currentPriority: string | null;
+  handleClick: (value: string) => void;
 }
 
-const modes = {
-  Train: 1,
-  "Light Rail": 4,
-  Bus: 5,
-  Coach: 7,
-  Ferry: 9,
-  "School Bus": 11,
+const priorities = {
+  "Very low": "veryLow",
+  Low: "low",
+  Normal: "normal",
+  High: "high",
+  "Very high": "veryHigh",
 };
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -32,20 +31,19 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const Modes = ({ currentMode, handleClick }: Props) => {
+const Modes = ({ currentPriority, handleClick }: Props) => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <Typography variant="h6" className={classes.title}>
-        Modes
+        Priority
       </Typography>
       <ButtonGroup color="primary">
-        {Object.entries(modes).map(([text, mode]) => (
+        {Object.entries(priorities).map(([text, value]) => (
           <Button
-            key={text}
-            variant={currentMode === mode ? "contained" : "outlined"}
-            onClick={() => handleClick(mode)}
+            variant={currentPriority === value ? "contained" : "outlined"}
+            onClick={() => handleClick(value)}
           >
             {text}
           </Button>
