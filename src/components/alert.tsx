@@ -25,6 +25,7 @@ const Alert = ({ title = "", description = "" }: Props) => {
 
   return (
     <>
+      <Divider />
       <ListItem>
         <ListItemText
           className={classes.text}
@@ -32,7 +33,6 @@ const Alert = ({ title = "", description = "" }: Props) => {
           secondary={<div dangerouslySetInnerHTML={{ __html: description }} />}
         />
       </ListItem>
-      <Divider />
     </>
   );
 };

@@ -6,17 +6,20 @@ import requestData from "../lib/request-data";
 import Header from "../components/header";
 import Calendar from "../components/calendar";
 import Alerts from "../components/alerts";
+import Modes from "../components/modes";
 
 const LandingPage = () => {
   const [date, setDate] = useState(new Date());
   const [data, setData] = useState<any>();
+  const [mode, setMode] = useState<number>(1);
   const [query, setQuery] = useState("");
 
   useEffect(() => {
     requestData({
+      filterMOTType: mode,
       filterDateValid: formatDate(date),
     }).then(setData);
-  }, [date]);
+  }, [date, mode]);
 
   const regexp = new RegExp(query, "i");
 
@@ -53,6 +56,7 @@ const LandingPage = () => {
           <Grid item xs={12} sm={8}>
             {data && (
               <Paper>
+                <Modes mode={mode} handleClick={setMode} />
                 <Alerts alerts={alerts} />
               </Paper>
             )}

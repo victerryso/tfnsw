@@ -6,7 +6,9 @@ const requestData = async (params = {}) => {
   const url = new URL(endpoint);
 
   Object.entries(params).forEach(([key, value]) => {
-    url.searchParams.set(key, `${value}`);
+    if (value) {
+      url.searchParams.set(key, `${value}`);
+    }
   });
 
   const response = await fetch(url.href);
