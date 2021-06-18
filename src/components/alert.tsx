@@ -19,18 +19,13 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
       minWidth: 275,
       marginBottom: theme.spacing(2),
-      a: {},
-    },
-    bullet: {
-      display: "inline-block",
-      margin: "0 2px",
-      transform: "scale(0.8)",
+      "& a": {
+        color: theme.palette.primary.main,
+        textDecoration: "none",
+      },
     },
     title: {
       fontSize: 14,
-    },
-    pos: {
-      marginBottom: 12,
     },
   })
 );
