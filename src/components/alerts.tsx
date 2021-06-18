@@ -12,7 +12,11 @@ const Alerts = ({ alerts = [] }: Props) => {
   return (
     <List>
       {alerts.map((alert: any) => (
-        <Alert title={alert.urlText} description={alert.content} />
+        <Alert
+          title={alert.urlText}
+          description={alert.content}
+          priority={alert.priority}
+        />
       ))}
 
       {alerts.length === 0 && (
