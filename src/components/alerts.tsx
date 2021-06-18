@@ -1,3 +1,4 @@
+import List from "@material-ui/core/List";
 import Alert from "./alert";
 
 interface Props {
@@ -6,7 +7,7 @@ interface Props {
 
 const Alerts = ({ alerts = [] }: Props) => {
   return (
-    <div>
+    <List>
       {alerts.map((alert: any) => (
         <Alert
           title={alert.urlText}
@@ -14,7 +15,7 @@ const Alerts = ({ alerts = [] }: Props) => {
           // items={[...alert.affected.lines, ...alert.affected.stops].map(({ description }) => description)}
         />
       ))}
-    </div>
+    </List>
   );
 };
 

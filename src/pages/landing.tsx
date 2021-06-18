@@ -38,7 +38,7 @@ const LandingPage = () => {
           alignItems="stretch"
         >
           <Grid item xs={12} sm={4}>
-            <Paper elevation={1}>
+            <Paper>
               <Calendar
                 date={date}
                 handleChange={(date) => date && setDate(date)}
@@ -46,7 +46,11 @@ const LandingPage = () => {
             </Paper>
           </Grid>
           <Grid item xs={12} sm={8}>
-            {data && <Alerts alerts={alerts} />}
+            {data && (
+              <Paper>
+                <Alerts alerts={alerts} />
+              </Paper>
+            )}
           </Grid>
         </Grid>
       </Container>

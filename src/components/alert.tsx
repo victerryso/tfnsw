@@ -1,59 +1,39 @@
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
-
-interface Item {
-  title: string;
-  description: string;
-}
+import React from "react";
+import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import Divider from "@material-ui/core/Divider";
 
 interface Props {
   title?: string;
   description?: string;
-  items?: Item[];
 }
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      minWidth: 275,
-      marginBottom: theme.spacing(2),
+    text: {
       "& a": {
         color: theme.palette.primary.main,
         textDecoration: "none",
       },
     },
-    title: {
-      fontSize: 14,
-    },
   })
 );
 
-const Alert = ({ title = "", description = "", items = [] }: Props) => {
+const Alert = ({ title = "", description = "" }: Props) => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
-      <CardContent>
-        <Typography
-          variant="h5"
-          component="h2"
-          dangerouslySetInnerHTML={{ __html: title }}
+    <>
+      <ListItem>
+        <ListItemText
+          className={classes.text}
+          primary={<div dangerouslySetInnerHTML={{ __html: title }} />}
+          secondary={<div dangerouslySetInnerHTML={{ __html: description }} />}
         />
-        <Typography
-          variant="body2"
-          component="p"
-          dangerouslySetInnerHTML={{ __html: description }}
-        />
-
-        {/*        {items.map((item) => (
-          <Typography variant="subtitle1" component="p" dangerouslySetInnerHTML={{ __html: items }}>
-            <p>{item}</p>
-          </Typography>
-        ))}*/}
-      </CardContent>
-    </Card>
+      </ListItem>
+      <Divider />
+    </>
   );
 };
 
