@@ -13,7 +13,7 @@ import Search from "../components/search";
 const LandingPage = () => {
   const [date, setDate] = useState(new Date());
   const [data, setData] = useState<any>();
-  const [mode, setMode] = useState(1);
+  const [mode, setMode] = useState<number | null>(null);
   const [query, setQuery] = useState("");
   const [priority, setPriority] = useState<string | null>(null);
 

@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 
 interface Props {
   currentPriority: string | null;
-  handleClick: (value: string) => void;
+  handleClick: (value: string | null) => void;
 }
 
 const priorities = {
@@ -43,7 +43,9 @@ const Modes = ({ currentPriority, handleClick }: Props) => {
         {Object.entries(priorities).map(([text, value]) => (
           <Button
             variant={currentPriority === value ? "contained" : "outlined"}
-            onClick={() => handleClick(value)}
+            onClick={() =>
+              handleClick(currentPriority === value ? null : value)
+            }
           >
             {text}
           </Button>

@@ -5,8 +5,8 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
 interface Props {
-  currentMode: number;
-  handleClick: (mode: number) => void;
+  currentMode: number | null;
+  handleClick: (mode: number | null) => void;
 }
 
 const modes = {
@@ -45,7 +45,7 @@ const Modes = ({ currentMode, handleClick }: Props) => {
           <Button
             key={text}
             variant={currentMode === mode ? "contained" : "outlined"}
-            onClick={() => handleClick(mode)}
+            onClick={() => handleClick(currentMode === mode ? null : mode)}
           >
             {text}
           </Button>
