@@ -1,8 +1,14 @@
 import React from "react";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import {
+  createStyles,
+  makeStyles,
+  Theme,
+  useTheme,
+} from "@material-ui/core/styles";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 interface Props {
   currentMode: number | null;
@@ -33,14 +39,16 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const Modes = ({ currentMode, handleClick }: Props) => {
+  const theme = useTheme();
   const classes = useStyles();
+  const matches = useMediaQuery(theme.breakpoints.up("sm"));
 
   return (
     <div className={classes.root}>
       <Typography variant="h6" className={classes.title}>
         Modes
       </Typography>
-      <ButtonGroup color="primary">
+      <ButtonGroup color="primary" size={matches ? "medium" : "small"}>
         {Object.entries(modes).map(([text, mode]) => (
           <Button
             key={text}
