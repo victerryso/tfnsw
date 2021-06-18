@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
+// Nice looking header
 const Header = () => {
   const classes = useStyles();
 

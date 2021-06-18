@@ -37,7 +37,8 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const Modes = ({ currentPriority, handleClick }: Props) => {
+// Buttons to filter different priorities
+const Priorities = ({ currentPriority, handleClick }: Props) => {
   const theme = useTheme();
   const classes = useStyles();
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
@@ -63,4 +64,4 @@ const Modes = ({ currentPriority, handleClick }: Props) => {
   );
 };
 
-export default Modes;
+export default Priorities;

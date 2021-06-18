@@ -2,6 +2,7 @@ const https = require("https");
 
 const key = "xxx";
 
+// Request data from tfnsw api
 exports.handler = async (event, context) => {
   const params = event.rawQueryString;
 
@@ -13,7 +14,7 @@ exports.handler = async (event, context) => {
     },
     hostname: "api.transport.nsw.gov.au",
     port: 443,
-    path: `/v1/tp/add_info?outputFormat=rapidJSON&filterDateValid=01-10-2016&version=10.2.1.42&`,
+    path: `/v1/tp/add_info?outputFormat=rapidJSON&version=10.2.1.42&${params}`,
     method: "GET",
   };
 

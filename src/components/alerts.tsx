@@ -8,6 +8,7 @@ interface Props {
   alerts: any[];
 }
 
+// List of alerts from api response
 const Alerts = ({ alerts = [] }: Props) => {
   return (
     <List>

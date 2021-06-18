@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
+// Search bar to filter out by regex
 const Search = ({ query, handleChange }: Props) => {
   const classes = useStyles();
 

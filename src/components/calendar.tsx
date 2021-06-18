@@ -6,6 +6,7 @@ interface Props {
   handleChange: (date: MaterialUiPickersDate) => void;
 }
 
+// Calendar to select date from api
 const Calendar = ({ date, handleChange }: Props) => (
   <DatePicker
     autoOk

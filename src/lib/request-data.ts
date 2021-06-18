@@ -1,7 +1,7 @@
-// Lambda function to request data from TFNSW
 const endpoint =
   "https://5ily0l2l1l.execute-api.ap-southeast-2.amazonaws.com/tfnsw";
 
+// Fetch data from lambda function
 const requestData = async (params = {}) => {
   const url = new URL(endpoint);
 

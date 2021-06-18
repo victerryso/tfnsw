@@ -44,6 +44,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
+// Single item alert
 const Alert = ({ title = "", description = "", priority }: Props) => {
   const classes = useStyles();
 

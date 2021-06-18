@@ -17,6 +17,7 @@ const LandingPage = () => {
   const [query, setQuery] = useState("");
   const [priority, setPriority] = useState<string | null>(null);
 
+  // Request data when date or mode change
   useEffect(() => {
     requestData({
       filterMOTType: mode,
@@ -24,8 +25,10 @@ const LandingPage = () => {
     }).then(setData);
   }, [date, mode]);
 
+  // Create regex to filter out alerts
   const regexp = new RegExp(query, "i");
 
+  // Get alerts from response data and filter via query and priority
   const alerts = (data?.infos?.current ?? []).filter((alert: any) => {
     return (
       regexp.test(JSON.stringify(alert)) &&
@@ -33,6 +36,7 @@ const LandingPage = () => {
     );
   });
 
+  // Callback when date is selected on calendar
   const handleCalendarChange = (date: MaterialUiPickersDate) => {
     if (date) {
       setDate(date);

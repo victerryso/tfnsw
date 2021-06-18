@@ -38,6 +38,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
+// Buttons to filter different modes
 const Modes = ({ currentMode, handleClick }: Props) => {
   const theme = useTheme();
   const classes = useStyles();
