@@ -9,6 +9,7 @@ import Alerts from "../components/alerts";
 const LandingPage = () => {
   const [date, setDate] = useState(new Date());
   const [data, setData] = useState<any>();
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     requestData({
@@ -16,9 +17,18 @@ const LandingPage = () => {
     }).then(setData);
   }, [date]);
 
+  const regexp = new RegExp(query, "i");
+
+  const alerts = (data?.infos?.current ?? []).filter((alert: any) => {
+    return regexp.test(JSON.stringify(alert));
+  });
+
   return (
     <div>
-      <Header />
+      <Header
+        value={query}
+        handleChange={(event) => setQuery(event.target.value)}
+      />
       <Container>
         <Grid
           container
@@ -36,7 +46,7 @@ const LandingPage = () => {
             </Paper>
           </Grid>
           <Grid item xs={12} sm={8}>
-            {data && <Alerts alerts={data?.infos?.current} />}
+            {data && <Alerts alerts={alerts} />}
           </Grid>
         </Grid>
       </Container>
