@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/tfnsw/static/css/main.5f5218a3.chunk.css",
+    "main.js": "/tfnsw/static/js/main.55b9f7e9.chunk.js",
+    "main.js.map": "/tfnsw/static/js/main.55b9f7e9.chunk.js.map",
+    "runtime-main.js": "/tfnsw/static/js/runtime-main.c08aaf68.js",
+    "runtime-main.js.map": "/tfnsw/static/js/runtime-main.c08aaf68.js.map",
+    "static/css/2.1184e25b.chunk.css": "/tfnsw/static/css/2.1184e25b.chunk.css",
+    "static/js/2.8c9e4900.chunk.js": "/tfnsw/static/js/2.8c9e4900.chunk.js",
+    "static/js/2.8c9e4900.chunk.js.map": "/tfnsw/static/js/2.8c9e4900.chunk.js.map",
+    "static/js/3.a1ecc1a3.chunk.js": "/tfnsw/static/js/3.a1ecc1a3.chunk.js",
+    "static/js/3.a1ecc1a3.chunk.js.map": "/tfnsw/static/js/3.a1ecc1a3.chunk.js.map",
+    "index.html": "/tfnsw/index.html",
+    "static/css/2.1184e25b.chunk.css.map": "/tfnsw/static/css/2.1184e25b.chunk.css.map",
+    "static/css/main.5f5218a3.chunk.css.map": "/tfnsw/static/css/main.5f5218a3.chunk.css.map",
+    "static/js/2.8c9e4900.chunk.js.LICENSE.txt": "/tfnsw/static/js/2.8c9e4900.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/tfnsw/static/media/roboto-vietnamese-400-normal.c0bec65d.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c08aaf68.js",
+    "static/css/2.1184e25b.chunk.css",
+    "static/js/2.8c9e4900.chunk.js",
+    "static/css/main.5f5218a3.chunk.css",
+    "static/js/main.55b9f7e9.chunk.js"
+  ]
+}
